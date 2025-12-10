@@ -1,1 +1,1 @@
-# SignalRProjectTest
+# SignalRProject
