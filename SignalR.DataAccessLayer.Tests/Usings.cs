@@ -1,0 +1,11 @@
+global using Xunit;
+global using Moq;
+global using SignalR.DataAccessLayer.Abstract;
+global using SignalR.DataAccessLayer.Concrete;
+global using SignalR.DataAccessLayer.EntityFramework;
+global using SignalR.EntityLayer.Entities;
+global using System;
+global using System.Collections.Generic;
+global using System.Linq;
+global using System.Text;
+global using System.Threading.Tasks;
