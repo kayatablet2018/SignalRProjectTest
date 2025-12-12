@@ -1,0 +1,68 @@
+<div class="container">
+    <h2>Siparişler</h2>
+    <p>Uygulama genelindeki siparişlerin listesini görüntüle ve yönet.</p>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Masa Numarası</th>
+                <th>Ürün Adı</th>
+                <th>Adet</th>
+                <th>Birim Fiyat</th>
+                <th>Toplam Fiyat</th>
+                <th>Sipariş Durumu</th>
+                <th>İşlemler</th>
+            </tr>
+        </thead>
+        <tbody>
+            @* Burada modelden gelen sipariş verileri listelenecek *@
+            <tr>
+                <td>1</td>
+                <td>Masa 5</td>
+                <td>Çay</td>
+                <td>2</td>
+                <td>5.00</td>
+                <td>10.00</td>
+                <td>Hazırlanıyor</td>
+                <td>
+                    <a href="#" class="btn btn-sm btn-info">Detay</a>
+                    <a href="#" class="btn btn-sm btn-success">Tamamlandı</a>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Masa 2</td>
+                <td>Kahve</td>
+                <td>1</td>
+                <td>8.50</td>
+                <td>8.50</td>
+                <td>Teslim Edildi</td>
+                <td>
+                    <a href="#" class="btn btn-sm btn-info">Detay</a>
+                    <a href="#" class="btn btn-sm btn-success">Tamamlandı</a>
+                </td>
+            </tr>
+            @* Diğer siparişler buraya eklenebilir *@
+        </tbody>
+    </table>
+</div>
+
+@section Scripts {
+    <script>
+        // Sayfaya özel JavaScript kodları buraya eklenebilir
+        $(document).ready(function () {
+            // Örnek: Sipariş durumuna göre renklendirme
+            $('tbody tr').each(function () {
+                var status = $(this).find('td:eq(6)').text().trim();
+                if (status === 'Hazırlanıyor') {
+                    $(this).addClass('table-warning');
+                } else if (status === 'Teslim Edildi') {
+                    $(this).addClass('table-success');
+                } else if (status === 'İptal Edildi') {
+                    $(this).addClass('table-danger');
+                }
+            });
+        });
+    </script>
+}
